@@ -1,0 +1,56 @@
+<!-- Aplicación web para la autogestión del restablecimiento de contraseñas -->
+<!-- Creada y desarrollada por Josué Romero | Todo gracias a mi amado Padre Celestial -->
+<!-- Fecha de terminación: 04/Abril/2024 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='img/icono.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='img/prodesa_1.png') }}" alt="Logo_Prodesa" style="width: 200px; height: auto;">
+            <h1>Autogestión de Usuarios</h1>
+        </header>
+
+        <nav>
+            <button data-tipo="desbloquear">Desbloquear Usuario</button>
+            <button data-tipo="resetear">Resetear Contraseña</button>
+        </nav>
+
+        <form id="formulario">
+            <input type="hidden" name="tipo" id="tipo" value="desbloquear">
+            
+            <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+
+            <div id="claveDiv">
+                <input type="password" name="clave" id="clave" placeholder="Nueva contraseña" minlength="6" required>
+                <span id="toggleClave">👁️</span>
+            </div>
+
+            <button type="submit">Ejecutar</button>
+
+            <div class="spinner" id="spinner"></div>
+
+            <div id="resultado" class="oculto"></div>
+        </form>
+
+        <footer>
+            <div class="enlaces">
+                <a href="https://teams.microsoft.com/l/chat/0/0?users=soporte.it@prodesa.com">Mesa de ayuda</a> |
+                <a href="https://wa.me/573203942764">Chat WhatsApp</a> |
+                <a href="mailto:soporte.it@prodesa.com">Correo Soporte</a>
+            </div>
+            <p>Edf. CAMACOL Piso 7 - Bogotá D.C | Desarrollada por Josué Romero</p>
+            <p><img src="/static/img/btec.png" alt="Logo_Btec"></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='/js/main.js') }}"></script>
+</body>
+</html>

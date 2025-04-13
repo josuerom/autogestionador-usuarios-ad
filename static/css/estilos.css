@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('/static/img/fondo_1.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+header {
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+nav button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.input-group {
+    position: relative;
+    width: 80%;
+}
+
+input {
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    background-color: #218838;
+}
+
+#spinner, #spinner2 {
+    margin-top: 1rem;
+    display: none;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 1rem auto;
+}
+
+#resultado {
+    display: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 1rem;
+    transition: opacity 0.5s ease;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 0 5px #15572466;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 0 5px #721c2466;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #444;
+    animation: fadeIn 2s ease-in;
+}
+
+footer p {
+    margin-top: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer img {
+    height: 40px;
+}
+
+.enlaces {
+    margin-bottom: 0.5rem;
+}
+
+.enlaces a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.enlaces a:hover {
+    color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav button, .input-group, button[type="submit"], #resultado {
+        width: 100%;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+}
