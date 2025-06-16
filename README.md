@@ -1,11 +1,10 @@
 # Autogestionador de usuario de red AD
 
-## Paquetes necesarios
-```bash
-pip install Flask
-```
-
 ## Para ejecutar el proyecto
 ```bash
-python .\app.py
+  pip install Flask
+  python app.py
 ```
+
+## Aplicación web
+![Aplicacion web en ejecución](./static/img/web_application_running.png)
